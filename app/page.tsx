@@ -13,11 +13,9 @@ export default function Home() {
       </section>
       <section className="mb-8">
         <h2 className="text-3xl font-bold">Experience</h2>
-        {/* List your experiences here */}
       </section>
       <section className="mb-8">
         <h2 className="text-3xl font-bold">Education</h2>
-        {/* List your educational background here */}
       </section>
     </main>
   );
