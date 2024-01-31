@@ -19,7 +19,6 @@ export default function Home() {
         <h2 className="text-3xl font-bold">Education</h2>
         {/* List your educational background here */}
       </section>
-      <DownloadButton />
     </main>
   );
 }
