@@ -1,36 +1,75 @@
-import DownloadButton from "@/components/DownloadButton";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Home() {
+  const linkArray: { text: string; href: string }[] = [
+    {
+      text: "Link1",
+      href: "/link1",
+    },
+    {
+      text: "Link2",
+      href: "/link2",
+    },
+    {
+      text: "Link2",
+      href: "/link2",
+    },
+    {
+      text: "Link2",
+      href: "/link2",
+    },
+    {
+      text: "Link2",
+      href: "/link2",
+    },
+    {
+      text: "Link2",
+      href: "/link2",
+    },
+    {
+      text: "Link2",
+      href: "/link2",
+    },
+    {
+      text: "Link2",
+      href: "/link2",
+    },
+    {
+      text: "Link2",
+      href: "/link2",
+    },
+    {
+      text: "Link2",
+      href: "/link2",
+    },
+  ];
+
   return (
-    <main className="container mx-auto">
-      <header className="mb-8 flex flex-row w-full bg-orange-300 p-6">
-        <section className="flex flex-col justify-center items-center w-3/4">
-          <h1 className="text-4xl text-center font-bold">James Duffield</h1>
-          <p className="text-xl text-center">Integrations Manager</p>
-          <hr className="w-[50%]" />
-          <p>soem stuff here</p>
-        </section>
-        <section className="flex">
-          <Image
-            src="/profile.jpg"
-            alt="Profile Photo"
-            width={200}
-            height={200}
-            className="rounded-full"
-          />
-        </section>
-      </header>
-      <section className="mb-8">
-        <h2 className="text-3xl font-bold">About Me</h2>
-        <p>Short description about yourself.</p>
-      </section>
-      <section className="mb-8">
-        <h2 className="text-3xl font-bold">Experience</h2>
-      </section>
-      <section className="mb-8">
-        <h2 className="text-3xl font-bold">Education</h2>
-      </section>
+    <main className="container mx-auto flex justify-center items-center h-screen">
+      <div className="w-3/4 h-3/4 bg-gray-100 rounded-lg p-4 opacity-0 animate-fadeIn overflow-hidden">
+        <div className="flex flex-row gap-2">
+          <div className="flex flex-col gap-2">
+            {/*
+            <Image
+              src="/profile.jpg"
+              alt="Descriptive alt text"
+              width={200}
+              height={200}
+              className="rounded-full"
+            /> */}
+            {linkArray.map((link, index) => (
+              <div
+                key={index}
+                className="animate-slideInFromLeft"
+                style={{ opacity: 0, animationDelay: `${0.5 + index * 0.2}s` }}
+              >
+                <Link href={link.href}>{link.text}</Link>
+              </div>
+            ))}
+          </div>
+          <div>hello</div>
+        </div>
+      </div>
     </main>
   );
 }

@@ -8,10 +8,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideInFromLeft: {
+          "0%": { opacity: "0", transform: "translateX(-100%)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        moveDash: {
+          from: { strokeDashoffset: "10" },
+          to: { strokeDashoffset: "0" },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 1s ease-out forwards",
+        slideInFromLeft: "slideInFromLeft 1s ease-out forwards",
+        moveDash: "moveDash 0.5s linear infinite",
       },
     },
   },
